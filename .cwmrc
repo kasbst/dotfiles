@@ -1,0 +1,15 @@
+command firefox   firefox
+
+sticky yes
+
+ignore polybar
+borderwidth 3
+gap 50 0 0 0 
+snapdist 20 
+fontname "Courier:size=7"
+color activeborder "#50FA7B"
+color inactiveborder "#21222C"
+color menubg "#282A36"
+color menufg "#50FA7B"
+color font "#F8F8F2"
+color selfont "#282A36"

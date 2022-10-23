@@ -1,0 +1,5 @@
+apmd_flags="-L"
+pkg_scripts=obsdfreqd
+smtpd_flags=NO
+sshd_flags=NO
+xenodm_flags=

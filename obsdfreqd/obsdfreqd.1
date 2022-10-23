@@ -1,0 +1,87 @@
+.Dd $Mdocdate: March 16 2021 $
+.Dt OBSDFREQD 1
+.Os
+.Sh NAME
+.Nm obsdfreqd
+.Nd manage the CPU frequency on OpenBSD from userland
+.Sh SYNOPSIS
+.Nm
+.Op Fl hv
+.Op Fl d Ar downstepfrequency
+.Op Fl i Ar inertia
+.Op Fl m Ar maxfrequency
+.Op Fl l Ar minfrequency
+.Op Fl r Ar threshold
+.Op Fl s Ar stepfrequency
+.Op Fl t Ar timefrequency
+.Op Fl T Ar maxtemperature
+.Sh DESCRIPTION
+.Nm
+is a program to play with the CPU frequency scheduler by providing
+many variables involved in the process.
+.Nm
+will switch the frequency policy to manual to manage the frequency itself
+and will restore the policy to auto upon exit.
+.Sh OPTIONS
+Arguments can be comma separated to provide different values for when on
+battery, if so, the first value is used when power plug is connected and second
+value when on battery.
+.Bl -tag -width Ds
+.It Fl v
+Enable verbose output in CSV format.
+.It Fl h
+Display usage
+.It Fl d Ar downstepfrequency
+Defines the frequency decrease step in percent.
+.It Fl i Ar inertia
+Defines the number of cycles under the CPU threshold before decreasing
+frequency.
+.It Fl m Ar maxfrequency
+Defines the maximum frequency in percent the CPU can be increased to.
+.It Fl l Ar minfrequency
+Defines the minimum frequency in percent the CPU can be reduced to.
+.It Fl r Ar threshold
+Defines the CPU usage in percent above which the frequency is increased.
+.It Fl s Ar stepfrequency
+Defines the frequency increase step in percent.
+.It Fl t Ar timefrequency
+Defines the time in milliseconds between each cycle.
+.It Fl T Ar maxtemperature
+Defines the maximum temperature in Celcius
+.Nm
+will allow before lowering the maximum frequency until the temperature
+cooled down.
+.El
+.Sh EXIT STATUS
+.Ex
+.Sh EXAMPLES
+This is a balanced power profile.
+.Bd -literal -offset indent
+obsdfreqd -t 150 -r 30 -d 10 -i 2
+.Ed
+.Pp
+Use different values for when on battery to save power.
+.Bd -literal -offset indent
+obsdfreqd -m 100,60 -r 25,40 -t 90,300 -d 10,100 -i 10,0
+.Ed
+.Sh DIAGNOSTICS
+.Nm
+has a verbose mode to get realtime information about frequency.
+.Sh AUTHORS
+.An See the LICENSE file for the authors .
+.Sh LICENSE
+See the LICENSE file for the terms of redistribution.
+.Sh BUGS
+When set to run a startup, if you also start the
+.Xr apmd 8
+service, make sure to start it with
+.Fl H
+or
+.Fl L
+to avoid
+.Xr apmd 8
+to reset the performance policy to automatic which would cause
+.Nm
+to crash.
+.Pp
+There may be other bugs.

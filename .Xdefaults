@@ -1,0 +1,19 @@
+! $OpenBSD: dot.Xdefaults,v 1.3 2014/07/10 10:22:59 jasper Exp $
+XTerm*loginShell:true
+XTerm*selectToClipboard: true
+
+XTerm*locale: utf8
+XTerm*v100.saveLines: 20000
+
+XTerm*faceName: Courier:style=Regular:size=6
+XTerm*faceSize1: 8
+XTerm*faceSize2: 10 
+XTerm*faceSize3: 12 
+XTerm*faceSize4: 14 
+XTerm*faceSize5: 16 
+XTerm*faceSize6: 18
+
+*.background:    #2E3440
+*.foreground:    #FFFFFF
+*.color2:        #50FA7B
+*.color10:       #50FA7B
