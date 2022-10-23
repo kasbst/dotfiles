@@ -1,2 +1,2 @@
 # bsd-dots
-Dotfiles for my OpenBSD desktop using CWM
+Dotfiles for my OpenBSD desktop using CWM.
