@@ -40,7 +40,7 @@ function network {
 function sensor {
 	_t=$(sysctl -n hw.sensors.cpu0.temp0 | awk '{ printf "%d", $1 }')
 	_c=$(sysctl -n hw.cpuspeed | awk '{ printf "%d", $1 }')
-	echo -n "CPU: ($_c Mhz) $_t°C"
+	echo -n "CPU: ($_c MHz) $_t°C"
 }
 
 function memory {
