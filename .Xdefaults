@@ -5,15 +5,18 @@ XTerm*selectToClipboard: true
 XTerm*locale: utf8
 XTerm*v100.saveLines: 20000
 
-XTerm*faceName: Courier:style=Regular:size=6
-XTerm*faceSize1: 8
-XTerm*faceSize2: 10 
-XTerm*faceSize3: 12 
-XTerm*faceSize4: 14 
-XTerm*faceSize5: 16 
-XTerm*faceSize6: 18
+XTerm*faceName: Courier:style=Regular:size=12
+XTerm*faceSize1: 14
+XTerm*faceSize2: 16 
+XTerm*faceSize3: 18 
+XTerm*faceSize4: 20 
+XTerm*faceSize5: 22 
+XTerm*faceSize6: 24
 
 *.background:    #2E3440
 *.foreground:    #FFFFFF
 *.color2:        #50FA7B
 *.color10:       #50FA7B
+
+Xft.antialias: 1
+Xft.dpi: 96
