@@ -3,6 +3,7 @@ command thunderbird  thunderbird
 command libreoffice  libreoffice
 command chrome  chrome
 command keepassxc  keepassxc
+command kate  kate
 
 sticky yes
 
