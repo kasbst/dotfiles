@@ -16,6 +16,9 @@ export ENABLE_WASM=1
 # lock display after a period of inactivity
 xidle -timeout 3600 &
 
+# pump up the volume
+doas mixerctl outputs.master=255,255
+
 /home/karol/scripts/polybar-start.sh
 
 xset b off
