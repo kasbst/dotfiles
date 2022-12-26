@@ -21,6 +21,8 @@ doas mixerctl outputs.master=255,255
 
 /home/karol/scripts/polybar-start.sh
 
+/home/karol/scripts/setup-screens.sh
+
 xset b off
 
 exec cwm

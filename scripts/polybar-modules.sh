@@ -1,9 +1,11 @@
 #!/bin/ksh
 
+_blu="#50FA7B"
+_grn="#69FF94"
 _orn="#F1FA8C"
 _red="#FF5555"
 
-set -A _nic "em0" "iwx0"
+set -A _nic "em0" "ure0" "iwx0"
 
 # Functions ------------------------------------------------------------
 
@@ -27,13 +29,15 @@ function datetime {
 }
 
 function network {
-	if [[ -z "$(ifconfig ${_nic[0]} | grep 'status: active')" ]]; then
-	   _id=$(ifconfig ${_nic[1]} | grep ieee80211: | awk '{print $3}')
-	   _s=$(ifconfig ${_nic[1]} | grep ieee80211: | awk '{print $8}')
+	if ! [[ -z "$(ifconfig ${_nic[0]} | grep 'status: active')" ]]; then
+           echo -n "| NW: Eth - ${_nic[0]}"
+        elif ! [[ -z "$(ifconfig ${_nic[1]} | grep 'status: active')" ]]; then
+           echo -n "| NW: Eth - ${_nic[1]}"
+        else
+	   _id=$(ifconfig ${_nic[2]} | grep ieee80211: | awk '{print $3}')
+	   _s=$(ifconfig ${_nic[2]} | grep ieee80211: | awk '{print $8}')
            
 	   echo -n "| NW: $_id $_s"
-	else
-           echo -n "| NW: Eth - ${_nic[0]}"
 	fi
 }
 
